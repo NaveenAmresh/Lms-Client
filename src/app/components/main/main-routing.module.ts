@@ -14,24 +14,26 @@ import {SetupComponent} from './pages/setup/setup.component';
 import {ReminderComponent} from './pages/reminder/reminder.component';
 import {DuesComponent} from './pages/dues/dues.component';
 import {PrintComponent} from './pages/users/print/print.component';
-import { AuthGuardService as AuthGuard } from '../services/auth-guard.service';
+import {AuthGuardService as AuthGuard} from '../services/auth-guard.service';
 const routes: Routes = [
   { path: 'panel', component: LayoutComponent, children: [
       { path: '', redirectTo: 'dash', pathMatch: 'full', canActivate: [AuthGuard] },
-      { path: 'dash', component: DashboardComponent, canActivate: [AuthGuard]  },
-      { path: 'usersList', component: UserListComponent, canActivate: [AuthGuard]  },
-      { path: 'user', component: UsersComponent, canActivate: [AuthGuard]  },
-      { path: 'book', component: BookComponent, canActivate: [AuthGuard]  },
-      { path: 'bookList', component: BookListComponent, canActivate: [AuthGuard]  },
-      { path: 'changePassword', component: ChangePasswordComponent, canActivate: [AuthGuard]  },
-      { path: 'issueBook', component: IssuebookComponent, canActivate: [AuthGuard]  },
-      { path: 'issuedList', component: IssuedListComponent, canActivate: [AuthGuard]  },
-      { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard]  },
-      { path: 'setup', component: SetupComponent, canActivate: [AuthGuard]  },
-      { path: 'reminder', component: ReminderComponent, canActivate: [AuthGuard]  },
-      { path: 'dues', component: DuesComponent, canActivate: [AuthGuard]  },
-      { path: 'print', component: PrintComponent, canActivate: [AuthGuard]  },
-    ], canActivate: [AuthGuard] }
+      { path: 'dash', component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: 'usersList', component: UserListComponent, canActivate: [AuthGuard] },
+      { path: 'user', component: UsersComponent, canActivate: [AuthGuard] },
+      { path: 'book', component: BookComponent, canActivate: [AuthGuard] },
+      { path: 'bookList', component: BookListComponent, canActivate: [AuthGuard] },
+      { path: 'changePassword', component: ChangePasswordComponent, canActivate: [AuthGuard] },
+      { path: 'issueBook', component: IssuebookComponent, canActivate: [AuthGuard] },
+      { path: 'issuedList', component: IssuedListComponent, canActivate: [AuthGuard] },
+      { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
+      { path: 'setup', component: SetupComponent, canActivate: [AuthGuard] },
+      { path: 'reminder', component: ReminderComponent, canActivate: [AuthGuard] },
+      { path: 'dues', component: DuesComponent, canActivate: [AuthGuard] },
+      { path: 'print', component: PrintComponent, canActivate: [AuthGuard] },
+      { path: 'set', component: SettingsComponent, canActivate: [AuthGuard] },
+    ], canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '404'}
 ];
 
 @NgModule({

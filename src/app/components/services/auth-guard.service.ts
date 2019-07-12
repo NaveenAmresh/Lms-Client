@@ -16,9 +16,6 @@ canActivate(): boolean {
       data: {head: 'TimedOut!', icon1: 'assignment_late', content1: 'Session Expired! Logged Out', icon2: '',
         icon3: '', content2: 'OK', color: 'black', color1: 'purple', color2: 'purple', color3: 'red', tip: 'Close the dialogue'},
     });
-    dialogRef.afterClosed().subscribe(() => {
-      window.location.reload();
-    });
     this.router.navigate(['/login']);
     return false;
   }

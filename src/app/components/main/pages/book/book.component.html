@@ -43,10 +43,8 @@
               </mat-option>
             </mat-select>
           </label>
-          <button mat-icon-button matSuffix matTooltip="Add New Category" (click)="up1($event)">
-            <mat-icon color="accent" matSuffix>
-              aspect_ratio
-            </mat-icon>
+          <button mat-icon-button matSuffix matTooltip="Manage Categories" (click)="up1($event)">
+            <mat-icon color="accent" matSuffix>aspect_ratio</mat-icon>
           </button>
           <mat-error *ngIf="BookForm.get('category').hasError('required')">Required Field</mat-error>
         </mat-form-field>
@@ -59,7 +57,7 @@
               </mat-option>
             </mat-select>
           </label>
-          <button mat-icon-button matSuffix matTooltip="Add New Publisher" (click)="sample($event)">
+          <button mat-icon-button matSuffix matTooltip="Manage Publishers" (click)="sample($event)">
             <mat-icon color="accent" matSuffix>aspect_ratio</mat-icon></button>
         </mat-form-field>
       </mat-toolbar-row>

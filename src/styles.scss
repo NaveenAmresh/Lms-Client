@@ -41,7 +41,8 @@ $lms-theme: mat-light-theme($lms-primary, $lms-accent, $lms-warn);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: darkviolet}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  height: 50%;
+  background-image:  linear-gradient(to left bottom, #00fff1, darkviolet, black); }
 .full { width: 100% }
 .half { width: 50% }
 .quarter  { width: 25% }

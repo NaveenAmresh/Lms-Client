@@ -37,6 +37,10 @@ export class CheckconnService {
     return this.http.get(url);
   }
   public set() {
+    const url = this.baseUrl + 'general/' + 1;
+    return this.http.get(url);
+  }
+  public updateset(data) {
     const headerDict = {
       Authorization: 'Bearer ' + localStorage.getItem('accessToken')
     };
@@ -44,10 +48,6 @@ export class CheckconnService {
       headers: new HttpHeaders(headerDict),
     };
     const url = this.baseUrl + 'general/' + 1;
-    return this.http.get(url, requestOptions);
-  }
-  public updateset(data) {
-    const url = this.baseUrl + 'general/' + 1;
-    return this.http.put(url, data);
+    return this.http.put(url, requestOptions, data);
   }
 }

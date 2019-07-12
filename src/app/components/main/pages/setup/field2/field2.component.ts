@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SetupComponent} from '../setup.component';
-
+import {MatDialog} from '@angular/material';
 @Component({
   selector: 'app-field2',
   templateUrl: './field2.component.html',
@@ -13,7 +13,7 @@ export class Field2Component implements OnInit {
     this.setup._post.addpublisher(this.setup.fb)
       .subscribe(() => {
         this.setup._snackBar.open('Successfully Added', 'close', {duration: 5000, panelClass: ['success']});
-        this.setup._get.listpub().subscribe((pubs) => {this.pubs = pubs; });
+        this.ngOnInit();
       }, () => {
         this.setup._snackBar.open('Oops! Something Went Wrong', 'close', {duration: 5000, panelClass: ['error']});
       });
@@ -23,7 +23,7 @@ export class Field2Component implements OnInit {
     this.setup._post.updatepublisher(id, this.setup.fb)
       .subscribe(() => {
         this.setup._snackBar.open('Successfully Added', 'close', {duration: 5000, panelClass: ['success']});
-        this.setup._get.listpub().subscribe((pubs) => {this.pubs = pubs; });
+        this.ngOnInit();
       }, () => {
         this.setup._snackBar.open('Oops! Something Went Wrong', 'close', {duration: 5000, panelClass: ['error']});
       });
@@ -33,15 +33,15 @@ export class Field2Component implements OnInit {
     this.setup._post.delpublisher(id)
       .subscribe(() => {
         this.setup._snackBar.open('Successfully Deleted', 'close', {duration: 5000, panelClass: ['success']});
-        this.setup._get.listcats().subscribe((pubs) => {this.pubs = pubs; });
+        this.ngOnInit();
       }, () => {
         this.setup._snackBar.open('Oops! Something Went Wrong', '', {duration: 5000, panelClass: ['error']});
       });
   }
-  constructor(private setup: SetupComponent) { }
+  constructor(private setup: SetupComponent, public dialog: MatDialog) { }
   ngOnInit() {
     this.setup._get.listpub().subscribe((data) => {
       this.pubs = data;
-    });
+    }, () => {this.pubs = [{ publisher_id: 0, publisher: 'Not Available', status: 'A' }]; });
   }
 }

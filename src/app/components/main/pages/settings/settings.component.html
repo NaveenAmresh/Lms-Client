@@ -1,0 +1,24 @@
+<h1 class="mat-h3" style="padding: 15px 0 0 15px">{{ title }}</h1>
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar-row>
+      <mat-form-field appearance="outline" class="quarter">
+        <mat-label>Background Color</mat-label>
+        <label><input matInput type="text" [value]="color1" readonly/></label>
+        <input matSuffix matInput [(colorPicker)]="color1" [style.background]="color1" readonly/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="half">
+        <mat-label>Text Color</mat-label>
+        <label><input matInput type="text" [value]="color2" readonly/></label>
+        <input matSuffix matInput [(colorPicker)]="color2" [style.background]="color2"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="quarter">
+        <mat-label>UserName</mat-label>
+        <mat-select value="outlne">
+          <mat-option value="outlne">outline</mat-option>
+          <mat-option value="legacy">legacy</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-toolbar-row>
+  </mat-card-content>
+</mat-card>

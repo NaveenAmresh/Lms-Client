@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import {ErrordialogueComponent} from '../popup/errordialogue/errordialogue.component';
-import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material';
 @Injectable({
   providedIn: 'root'
@@ -24,7 +23,7 @@ export class AuthService {
       } else {
         const token = localStorage.getItem('accessToken'); const refresh = localStorage.getItem('refreshToken');
         const form1 = new FormData(); const form2 = new FormData(); form1.append('token', token); form2.append('refresh', refresh);
-        return this.http.post(this.baseUrl + '/token/verify/', form1).toPromise()
+        return this.http.post(this.baseUrl + 'token/verify/', form1).toPromise()
           .then(() => {
             return;
           }, err1 => {
