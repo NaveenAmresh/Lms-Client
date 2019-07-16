@@ -9,7 +9,7 @@
           <mat-card-subtitle><b>ADMIN</b></mat-card-subtitle>
         </mat-card-actions>
       </mat-card>
-      <mat-accordion displayMode="default" [style.color]="color1">
+      <mat-accordion displayMode="flat" [style.color]="color1">
         <mat-expansion-panel [style.background-color]="color1" hideToggle="true" disabled="true">
           <mat-expansion-panel-header routerLinkActive="active-link"><a routerLink="dash">
              <mat-panel-title [style.color]="color2">
@@ -172,7 +172,7 @@
         </mat-expansion-panel>
       </mat-accordion>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content style="background: #f2f2f2; color: black">
       <mat-toolbar [style.color]="color1" [style.background-color]="color2">
         <mat-toolbar-row>
           <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>

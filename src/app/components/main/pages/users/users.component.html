@@ -118,7 +118,7 @@
             </label>
           </mat-form-field>
         </form>
-        <button *ngIf="id === 0" mat-raised-button color="accent" (click)="submit()"
+        <button *ngIf="id === 0" mat-raised-button (click)="submit()"
                 [disabled]="userForm.invalid||userForm.value.city===''">
           <mat-icon>save</mat-icon>
           save
